@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet" />
+<script src="./image-slot.js"></script>
+<style>
+  html, body { margin: 0; padding: 0; background: #F6F0E9; }
+  * { box-sizing: border-box; }
+  a { color: #A87445; text-decoration: none; }
+  a:hover { color: #7E5326; }
+  ::selection { background: #E7D5BF; }
+  @keyframes cdFade { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+  .cd-scroll::-webkit-scrollbar { height: 3px; }
+  .cd-scroll::-webkit-scrollbar-thumb { background: #DCCBB6; border-radius: 3px; }
+</style>
+</helmet>
+
+<div style="min-height: 100vh; background: radial-gradient(120% 60% at 50% 0%, #FBF6F0 0%, #F3EADF 55%, #EFE4D6 100%); font-family: Jost, sans-serif; color: #2B211A; display: flex; justify-content: center; padding: 0 0 0 0;">
+<div style="width: 100%; max-width: 468px; padding: 0 22px 130px; position: relative;">
+
+<sc-if value="{{ isHome }}" hint-placeholder-val="{{ true }}">
+<div style="animation: cdFade .5s ease both;">
+
+  <div style="display: flex; align-items: center; justify-content: center; gap: 10px; padding: 30px 0 22px;">
+    <div style="height: 1px; width: 34px; background: #DFCFBA;"></div>
+    <div style="font-family: 'Cormorant Garamond', serif; font-size: 15px; letter-spacing: .42em; color: #A87445; text-transform: uppercase;">Clara Dantas</div>
+    <div style="height: 1px; width: 34px; background: #DFCFBA;"></div>
+  </div>
+
+  <div style="position: relative; border-radius: 26px; overflow: hidden; background: #E9DDCE; box-shadow: 0 24px 60px -28px rgba(78,52,26,.45); aspect-ratio: 4 / 5;">
+    <img src="assets/clara-perfil.jpeg" alt="Dra. Clara Dantas" style="width: 100%; height: 100%; object-fit: cover; object-position: 50% 22%; display: block;" />
+    <div style="position: absolute; inset: auto 0 0 0; height: 42%; background: linear-gradient(to top, rgba(38,26,16,.62), rgba(38,26,16,0));"></div>
+    <div style="position: absolute; left: 20px; right: 20px; bottom: 18px; display: flex; flex-direction: column; gap: 6px;">
+      <div style="font-family: JetBrains Mono, monospace; font-size: 9.5px; letter-spacing: .26em; color: #F0DFC9; text-transform: uppercase;">Harmonização Orofacial</div>
+      <div style="font-family: 'Cormorant Garamond', serif; font-size: 34px; line-height: 1; color: #FFFAF3; font-weight: 500;">Dra. Clara Dantas</div>
+    </div>
+  </div>
+
+  <div style="padding: 26px 2px 0; display: flex; flex-direction: column; gap: 14px;">
+    <div style="font-family: JetBrains Mono, monospace; font-size: 9.5px; letter-spacing: .24em; color: #A87445; text-transform: uppercase;">Cirurgiã-dentista · CRO a definir</div>
+    <p style="margin: 0; font-size: 15.5px; line-height: 1.72; color: #4E4038; font-weight: 300; text-wrap: pretty;">Olá, seja muito bem-vindo(a). Sou apaixonada por Harmonização Orofacial e meu propósito é valorizar o que você já tem de mais bonito — com resultados naturais, seguros e atemporais.</p>
+    <div style="display: flex; flex-wrap: wrap; gap: 7px;">
+      <div style="border: 1px solid #E2D2BE; border-radius: 999px; padding: 6px 13px; font-size: 11px; letter-spacing: .08em; color: #7A6350; text-transform: uppercase;">Análise facial</div>
+      <div style="border: 1px solid #E2D2BE; border-radius: 999px; padding: 6px 13px; font-size: 11px; letter-spacing: .08em; color: #7A6350; text-transform: uppercase;">Naturalidade</div>
+      <div style="border: 1px solid #E2D2BE; border-radius: 999px; padding: 6px 13px; font-size: 11px; letter-spacing: .08em; color: #7A6350; text-transform: uppercase;">Planejamento exclusivo</div>
+    </div>
+  </div>
+
+  <div onClick="{{ agendar }}" style="margin-top: 26px; cursor: pointer; background: linear-gradient(135deg, #B0824F, #93683A); border-radius: 18px; padding: 18px 22px; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 18px 34px -20px rgba(122,83,40,.85);">
+    <div style="display: flex; flex-direction: column; gap: 3px;">
+      <div style="font-size: 16px; color: #FFF9F0; letter-spacing: .01em;">Agendar avaliação</div>
+      <div style="font-size: 12px; color: rgba(255,243,228,.72); font-weight: 300;">WhatsApp · resposta no mesmo dia</div>
+    </div>
+    <div style="font-size: 17px; color: #FFF3E4;">→</div>
+  </div>
+
+  <div style="margin-top: 12px; display: flex; flex-direction: column; gap: 9px;">
+    <sc-for list="{{ links }}" as="l" hint-placeholder-count="6">
+      <div onClick="{{ l.onClick }}" style="cursor: pointer; background: rgba(255,253,250,.82); border: 1px solid #EADCCB; border-radius: 16px; padding: 15px 18px; display: flex; align-items: center; gap: 14px;" style-hover="border-color: #D5BC9C; background: #FFFDFA;">
+        <div style="font-family: 'Cormorant Garamond', serif; font-size: 15px; color: #B0824F; width: 16px; text-align: center;">{{ l.mark }}</div>
+        <div style="flex: 1; display: flex; flex-direction: column; gap: 2px;">
+          <div style="font-size: 15px; color: #2F251D;">{{ l.title }}</div>
+          <div style="font-size: 12px; color: #8B7663; font-weight: 300;">{{ l.sub }}</div>
+        </div>
+        <div style="font-size: 14px; color: #C4A882;">→</div>
+      </div>
+    </sc-for>
+  </div>
+
+  <div style="display: flex; align-items: center; gap: 12px; padding: 34px 0 16px;">
+    <div style="height: 1px; flex: 1; background: #E2D3C0;"></div>
+    <div style="font-family: JetBrains Mono, monospace; font-size: 9px; letter-spacing: .26em; color: #A28B74; text-transform: uppercase;">O que te trouxe aqui</div>
+    <div style="height: 1px; flex: 1; background: #E2D3C0;"></div>
+  </div>
+
+  <div style="display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;">
+    <sc-for list="{{ procs }}" as="p" hint-placeholder-count="8">
+      <div onClick="{{ p.onClick }}" style="cursor: pointer; border: 1px solid #E4D5C2; background: rgba(255,253,250,.7); border-radius: 999px; padding: 9px 15px; font-size: 12.5px; color: #5C4B3D; font-weight: 300;" style-hover="border-color: #B0824F; color: #8B5F2E;">{{ p.name }}</div>
+    </sc-for>
+  </div>
+
+  <div style="display: flex; align-items: center; gap: 12px; padding: 36px 0 16px;">
+    <div style="height: 1px; flex: 1; background: #E2D3C0;"></div>
+    <div style="font-family: JetBrains Mono, monospace; font-size: 9px; letter-spacing: .26em; color: #A28B74; text-transform: uppercase;">Pacientes</div>
+    <div style="height: 1px; flex: 1; background: #E2D3C0;"></div>
+  </div>
+
+  <div class="cd-scroll" style="display: flex; gap: 12px; overflow-x: auto; padding: 2px 0 14px; margin: 0 -22px; padding-left: 22px; padding-right: 22px; scroll-snap-type: x mandatory;">
+    <sc-for list="{{ feedbacks }}" as="f" hint-placeholder-count="3">
+      <div style="scroll-snap-align: start; flex: 0 0 250px; background: #FFFDFA; border: 1px solid #EADCCB; border-radius: 18px; padding: 18px; display: flex; flex-direction: column; gap: 10px;">
+        <div style="color: #C79A62; font-size: 12px; letter-spacing: .22em;">★★★★★</div>
+        <div style="font-family: 'Cormorant Garamond', serif; font-size: 17px; line-height: 1.5; color: #3B2F26; font-style: italic;">{{ f.quote }}</div>
+        <div style="font-family: JetBrains Mono, monospace; font-size: 9px; letter-spacing: .18em; color: #A08A73; text-transform: uppercase;">{{ f.who }}</div>
+      </div>
+    </sc-for>
+  </div>
+
+  <div style="padding: 26px 0 0; display: flex; flex-direction: column; align-items: center; gap: 9px;">
+    <div style="height: 1px; width: 46px; background: #DFCFBA;"></div>
+    <div style="font-size: 12.5px; color: #8B7663; font-weight: 300;">Cidade a definir · Atendimento com hora marcada</div>
+    <div style="font-family: JetBrains Mono, monospace; font-size: 9px; letter-spacing: .24em; color: #B7A28B; text-transform: uppercase;">@ instagram a definir</div>
+  </div>
+
+</div>
+</sc-if>
+
+<sc-if value="{{ isSobre }}">
+<div style="animation: cdFade .4s ease both; padding-top: 74px;">
+  <div style="border-radius: 24px; overflow: hidden; aspect-ratio: 3 / 4; background: #E9DDCE;">
+    <img src="assets/clara-perfil.jpeg" alt="Dra. Clara Dantas" style="width: 100%; height: 100%; object-fit: cover; object-position: 50% 20%; display: block;" />
+  </div>
+  <div style="padding: 24px 0 0; display: flex; flex-direction: column; gap: 18px;">
+    <div style="font-family: 'Cormorant Garamond', serif; font-size: 32px; line-height: 1.1; color: #2B211A; font-weight: 500;">Cirurgiã-dentista apaixonada pela Harmonização Orofacial</div>
+    <p style="margin: 0; font-size: 15.5px; line-height: 1.78; color: #4E4038; font-weight: 300; text-wrap: pretty;">Minha trajetória é construída com muito estudo, dedicação e atualização constante. Cada curso e cada paciente que passou por mim reforçou a certeza de que a excelência está nos detalhes.</p>
+    <p style="margin: 0; font-size: 15.5px; line-height: 1.78; color: #4E4038; font-weight: 300; text-wrap: pretty;">Por isso, busco oferecer tratamentos modernos, seguros e personalizados, respeitando a individualidade e a beleza natural de cada rosto.</p>
+    <div style="border-left: 2px solid #C79A62; padding: 4px 0 4px 18px;">
+      <p style="margin: 0; font-family: 'Cormorant Garamond', serif; font-size: 20px; line-height: 1.55; color: #4A3A2C; font-style: italic;">Antes de qualquer tratamento, realizo uma análise completa para entender seus objetivos, suas características e criar um planejamento exclusivo para você.</p>
+    </div>
+    <p style="margin: 0; font-size: 15.5px; line-height: 1.78; color: #4E4038; font-weight: 300; text-wrap: pretty;">Meu propósito é valorizar o que você já tem de mais bonito, preservando sua identidade e alcançando resultados naturais e atemporais. Será um prazer fazer parte da sua jornada de autoestima e autocuidado.</p>
+    <div style="display: flex; flex-wrap: wrap; gap: 7px; padding-top: 4px;">
+      <div style="border: 1px solid #E2D2BE; border-radius: 999px; padding: 7px 14px; font-size: 11.5px; color: #7A6350;">Formação continuada</div>
+      <div style="border: 1px solid #E2D2BE; border-radius: 999px; padding: 7px 14px; font-size: 11.5px; color: #7A6350;">Análise facial individualizada</div>
+      <div style="border: 1px solid #E2D2BE; border-radius: 999px; padding: 7px 14px; font-size: 11.5px; color: #7A6350;">Resultados naturais</div>
+    </div>
+  </div>
+  <div onClick="{{ agendar }}" style="margin-top: 28px; cursor: pointer; background: linear-gradient(135deg, #B0824F, #93683A); border-radius: 18px; padding: 17px 22px; display: flex; align-items: center; justify-content: space-between;">
+    <div style="font-size: 15.5px; color: #FFF9F0;">Quero uma análise facial</div>
+    <div style="font-size: 16px; color: #FFF3E4;">→</div>
+  </div>
+</div>
+</sc-if>
+
+<sc-if value="{{ isProc }}">
+<div style="animation: cdFade .4s ease both; padding-top: 74px; display: flex; flex-direction: column; gap: 10px;">
+  <p style="margin: 0 0 12px; font-size: 15px; line-height: 1.7; color: #4E4038; font-weight: 300;">Cada plano é definido depois da análise facial. Os valores são passados individualmente no WhatsApp, de acordo com o seu planejamento.</p>
+  <sc-for list="{{ procs }}" as="p" hint-placeholder-count="8">
+    <div onClick="{{ p.onClick }}" style="cursor: pointer; background: #FFFDFA; border: 1px solid #EADCCB; border-radius: 16px; padding: 17px 18px; display: flex; align-items: center; gap: 14px;" style-hover="border-color: #D5BC9C;">
+      <div style="flex: 1; display: flex; flex-direction: column; gap: 4px;">
+        <div style="font-family: 'Cormorant Garamond', serif; font-size: 20px; color: #2F251D; font-weight: 500;">{{ p.name }}</div>
+        <div style="font-size: 12.5px; color: #8B7663; font-weight: 300; line-height: 1.5;">{{ p.desc }}</div>
+      </div>
+      <div style="font-size: 14px; color: #C4A882;">→</div>
+    </div>
+  </sc-for>
+  <div style="margin-top: 14px; border: 1px dashed #D9C6AE; border-radius: 16px; padding: 16px; font-family: JetBrains Mono, monospace; font-size: 10.5px; line-height: 1.7; color: #9C8570;">lista a confirmar com a Dra. Clara — me diga quais procedimentos entram, saem ou mudam de nome</div>
+</div>
+</sc-if>
+
+<sc-if value="{{ isAntes }}">
+<div style="animation: cdFade .4s ease both; padding-top: 74px; display: flex; flex-direction: column; gap: 22px;">
+  <p style="margin: 0; font-size: 15px; line-height: 1.7; color: #4E4038; font-weight: 300;">Resultados reais, publicados com autorização das pacientes.</p>
+  <div style="display: flex; flex-direction: column; gap: 8px;">
+    <div style="font-family: JetBrains Mono, monospace; font-size: 9px; letter-spacing: .24em; color: #A28B74; text-transform: uppercase;">Caso 01 · procedimento a definir</div>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+      <image-slot id="cd-a1" style="width: 100%; height: 240px;" shape="rounded" radius="14" placeholder="ANTES"></image-slot>
+      <image-slot id="cd-d1" style="width: 100%; height: 240px;" shape="rounded" radius="14" placeholder="DEPOIS"></image-slot>
+    </div>
+  </div>
+  <div style="display: flex; flex-direction: column; gap: 8px;">
+    <div style="font-family: JetBrains Mono, monospace; font-size: 9px; letter-spacing: .24em; color: #A28B74; text-transform: uppercase;">Caso 02 · procedimento a definir</div>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+      <image-slot id="cd-a2" style="width: 100%; height: 240px;" shape="rounded" radius="14" placeholder="ANTES"></image-slot>
+      <image-slot id="cd-d2" style="width: 100%; height: 240px;" shape="rounded" radius="14" placeholder="DEPOIS"></image-slot>
+    </div>
+  </div>
+  <div style="display: flex; flex-direction: column; gap: 8px;">
+    <div style="font-family: JetBrains Mono, monospace; font-size: 9px; letter-spacing: .24em; color: #A28B74; text-transform: uppercase;">Caso 03 · procedimento a definir</div>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+      <image-slot id="cd-a3" style="width: 100%; height: 240px;" shape="rounded" radius="14" placeholder="ANTES"></image-slot>
+      <image-slot id="cd-d3" style="width: 100%; height: 240px;" shape="rounded" radius="14" placeholder="DEPOIS"></image-slot>
+    </div>
+  </div>
+  <div style="font-family: JetBrains Mono, monospace; font-size: 10.5px; line-height: 1.7; color: #9C8570;">arraste as fotos autorizadas para os espaços acima</div>
+</div>
+</sc-if>
+
+<sc-if value="{{ isDep }}">
+<div style="animation: cdFade .4s ease both; padding-top: 74px; display: flex; flex-direction: column; gap: 12px;">
+  <sc-for list="{{ feedbacks }}" as="f" hint-placeholder-count="3">
+    <div style="background: #FFFDFA; border: 1px solid #EADCCB; border-radius: 18px; padding: 20px; display: flex; flex-direction: column; gap: 10px;">
+      <div style="color: #C79A62; font-size: 12px; letter-spacing: .22em;">★★★★★</div>
+      <div style="font-family: 'Cormorant Garamond', serif; font-size: 19px; line-height: 1.55; color: #3B2F26; font-style: italic;">{{ f.quote }}</div>
+      <div style="font-family: JetBrains Mono, monospace; font-size: 9px; letter-spacing: .18em; color: #A08A73; text-transform: uppercase;">{{ f.who }}</div>
+    </div>
+  </sc-for>
+  <div style="margin-top: 6px; border: 1px dashed #D9C6AE; border-radius: 16px; padding: 16px; font-family: JetBrains Mono, monospace; font-size: 10.5px; line-height: 1.7; color: #9C8570;">me envie os depoimentos reais (print ou texto) e eu substituo estes</div>
+</div>
+</sc-if>
+
+<sc-if value="{{ isLocal }}">
+<div style="animation: cdFade .4s ease both; padding-top: 74px; display: flex; flex-direction: column; gap: 18px;">
+  <div style="border: 1px dashed #D9C6AE; border-radius: 20px; height: 190px; display: flex; align-items: center; justify-content: center; font-family: JetBrains Mono, monospace; font-size: 10.5px; letter-spacing: .12em; color: #A28B74; text-transform: uppercase;">mapa · endereço a definir</div>
+  <div style="display: flex; flex-direction: column; gap: 6px;">
+    <div style="font-family: 'Cormorant Garamond', serif; font-size: 26px; color: #2B211A; font-weight: 500;">Consultório</div>
+    <div style="font-size: 14.5px; color: #6B5A4B; font-weight: 300; line-height: 1.7;">Rua, número, sala · Bairro<br />Cidade · UF</div>
+  </div>
+  <div style="display: flex; flex-direction: column; gap: 4px; border-top: 1px solid #E7D8C5; padding-top: 16px;">
+    <div style="font-family: JetBrains Mono, monospace; font-size: 9px; letter-spacing: .24em; color: #A28B74; text-transform: uppercase;">Horários</div>
+    <div style="font-size: 14.5px; color: #6B5A4B; font-weight: 300; line-height: 1.7;">Seg a Sex · horário a definir<br />Sábado · horário a definir</div>
+  </div>
+  <div onClick="{{ agendar }}" style="cursor: pointer; background: linear-gradient(135deg, #B0824F, #93683A); border-radius: 18px; padding: 17px 22px; display: flex; align-items: center; justify-content: space-between;">
+    <div style="font-size: 15.5px; color: #FFF9F0;">Confirmar horário no WhatsApp</div>
+    <div style="font-size: 16px; color: #FFF3E4;">→</div>
+  </div>
+</div>
+</sc-if>
+
+<sc-if value="{{ isBot }}">
+<div style="animation: cdFade .4s ease both; padding-top: 74px; display: flex; flex-direction: column; gap: 14px; min-height: 70vh;">
+  <sc-for list="{{ botMsgs }}" as="m" hint-placeholder-count="1">
+    <div style="display: flex; justify-content: {{ m.align }};">
+      <div style="max-width: 84%; border-radius: 16px; padding: 14px 16px; font-size: 14.5px; line-height: 1.65; font-weight: 300; background: {{ m.bg }}; color: {{ m.fg }}; border: 1px solid {{ m.border }};">{{ m.text }}</div>
+    </div>
+  </sc-for>
+  <div style="display: flex; flex-wrap: wrap; gap: 7px; justify-content: flex-end; padding-top: 4px;">
+    <sc-for list="{{ topics }}" as="t" hint-placeholder-count="5">
+      <div onClick="{{ t.onClick }}" style="cursor: pointer; border: 1px solid #DCC8AE; background: #FFFDFA; border-radius: 999px; padding: 9px 15px; font-size: 12.5px; color: #6E5946;" style-hover="border-color: #B0824F; color: #8B5F2E;">{{ t.label }}</div>
+    </sc-for>
+  </div>
+  <div onClick="{{ agendar }}" style="margin-top: auto; cursor: pointer; background: linear-gradient(135deg, #B0824F, #93683A); border-radius: 18px; padding: 16px 20px; display: flex; align-items: center; justify-content: space-between;">
+    <div style="font-size: 15px; color: #FFF9F0;">Falar direto com a Dra. Clara</div>
+    <div style="font-size: 16px; color: #FFF3E4;">→</div>
+  </div>
+</div>
+</sc-if>
+
+<sc-if value="{{ notHome }}">
+<div style="position: fixed; top: 0; left: 0; right: 0; z-index: 20; background: rgba(246,240,233,.9); backdrop-filter: blur(12px); border-bottom: 1px solid #E7D8C5;">
+  <div style="max-width: 468px; margin: 0 auto; padding: 14px 22px; display: flex; align-items: center; gap: 14px;">
+    <div onClick="{{ nav.home }}" style="cursor: pointer; width: 34px; height: 34px; border-radius: 50%; border: 1px solid #DFCFBA; display: flex; align-items: center; justify-content: center; color: #8B6B47; font-size: 15px;" style-hover="border-color: #B0824F;">←</div>
+    <div style="font-family: 'Cormorant Garamond', serif; font-size: 20px; color: #2B211A; font-weight: 500;">{{ screenTitle }}</div>
+  </div>
+</div>
+</sc-if>
+
+<div style="position: fixed; bottom: 22px; right: 0; left: 0; z-index: 20; pointer-events: none;">
+  <div style="max-width: 468px; margin: 0 auto; padding: 0 22px; display: flex; justify-content: flex-end; gap: 10px;">
+    <div onClick="{{ nav.bot }}" style="pointer-events: auto; cursor: pointer; height: 46px; padding: 0 18px; border-radius: 999px; background: #FFFDFA; border: 1px solid #E2D2BE; display: flex; align-items: center; gap: 9px; box-shadow: 0 14px 30px -16px rgba(78,52,26,.5);" style-hover="border-color: #B0824F;">
+      <div style="width: 7px; height: 7px; border-radius: 50%; background: #B0824F;"></div>
+      <div style="font-size: 13px; color: #5C4B3D;">Tirar dúvidas</div>
+    </div>
+    <div onClick="{{ agendar }}" style="pointer-events: auto; cursor: pointer; height: 46px; padding: 0 20px; border-radius: 999px; background: linear-gradient(135deg, #B0824F, #93683A); display: flex; align-items: center; box-shadow: 0 14px 30px -14px rgba(122,83,40,.85);">
+      <div style="font-size: 13px; color: #FFF9F0;">WhatsApp</div>
+    </div>
+  </div>
+</div>
+
+</div>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:468,&quot;height&quot;:900},&quot;whatsapp&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;5583999999999&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Contato&quot;},&quot;instagram&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Contato&quot;}}">
+const PROCS = [
+  ["Toxina botulínica", "Suaviza linhas de expressão preservando a naturalidade"],
+  ["Preenchimento labial", "Contorno, hidratação e volume proporcional ao seu rosto"],
+  ["Preenchimento facial", "Malar, mento, olheiras e mandíbula com desenho personalizado"],
+  ["Bioestimulador de colágeno", "Firmeza e qualidade de pele a médio e longo prazo"],
+  ["Fios de PDO", "Sustentação e leve efeito lifting"],
+  ["Rinomodelação", "Ajuste do perfil nasal sem cirurgia"],
+  ["Skinbooster", "Hidratação profunda e viço"],
+  ["Lipo enzimática de papada", "Definição do contorno mandibular"]
+];
+
+const TOPICS = [
+  ["Dói?", "A maioria dos procedimentos é feita com anestésico tópico ou local, então o desconforto é bem pequeno. A Dra. Clara conversa com você durante todo o atendimento para que tudo aconteça com tranquilidade."],
+  ["Fica natural?", "Sim — esse é o princípio do trabalho da Dra. Clara. O planejamento parte da sua própria anatomia, valorizando o que você já tem de bonito, sem mudar a sua identidade."],
+  ["Quanto custa?", "O valor depende do planejamento feito na análise facial, porque cada rosto pede uma combinação diferente. Por isso os valores são passados individualmente no WhatsApp."],
+  ["Quanto dura?", "Varia por procedimento e por organismo: toxina botulínica em média 4 a 6 meses, preenchimentos de 9 a 18 meses e bioestimuladores até cerca de 2 anos."],
+  ["Como é a 1ª consulta?", "Começa por uma análise facial completa: a Dra. Clara escuta seus objetivos, avalia proporções e propõe um planejamento exclusivo, sem compromisso de fechar no mesmo dia."],
+  ["Tem recuperação?", "Na maioria dos casos você volta à rotina no mesmo dia. Pode haver leve inchaço ou pequenos hematomas nos primeiros dias, e você recebe orientações de cuidado por escrito."],
+  ["Quero agendar", "Perfeito. Toque no botão abaixo e a Dra. Clara já te responde para reservar o melhor horário."]
+];
+
+const FEEDBACKS = [
+  ["Saiu exatamente como eu queria: ninguém percebeu o procedimento, só disseram que eu estava descansada.", "depoimento a substituir"],
+  ["Fui muito bem acolhida. A análise antes de tudo me deu total segurança para seguir com o tratamento.", "depoimento a substituir"],
+  ["Resultado leve e natural, do jeito que combinamos no planejamento. Voltarei com certeza.", "depoimento a substituir"]
+];
+
+const TITLES = {
+  sobre: "Quem sou",
+  proc: "Procedimentos",
+  antes: "Antes & depois",
+  dep: "Depoimentos",
+  local: "Localização",
+  bot: "Tire suas dúvidas"
+};
+
+class Component extends DCLogic {
+  state = {
+    screen: "home",
+    botMsgs: [{ from: "bot", text: "Olá! Sou a assistente da Dra. Clara Dantas. Posso te ajudar com dúvidas sobre Harmonização Orofacial — escolha um assunto abaixo." }]
+  };
+
+  set = (screen) => () => this.setState({ screen });
+
+  wa(text) {
+    const num = this.props.whatsapp || "5583999999999";
+    window.open("https://wa.me/" + num + "?text=" + encodeURIComponent(text), "_blank");
+  }
+
+  ask = (label, answer) => () => {
+    this.setState((s) => ({
+      botMsgs: [...s.botMsgs, { from: "me", text: label }, { from: "bot", text: answer }]
+    }));
+  };
+
+  renderVals() {
+    const { screen } = this.state;
+    const insta = this.props.instagram || "instagram a definir";
+    const nav = {
+      home: this.set("home"),
+      sobre: this.set("sobre"),
+      proc: this.set("proc"),
+      antes: this.set("antes"),
+      dep: this.set("dep"),
+      local: this.set("local"),
+      bot: this.set("bot")
+    };
+    return {
+      screen,
+      isHome: screen === "home",
+      notHome: screen !== "home",
+      isSobre: screen === "sobre",
+      isProc: screen === "proc",
+      isAntes: screen === "antes",
+      isDep: screen === "dep",
+      isLocal: screen === "local",
+      isBot: screen === "bot",
+      screenTitle: TITLES[screen] || "",
+      nav,
+      agendar: () => this.wa("Olá, Dra. Clara! Gostaria de agendar uma avaliação de Harmonização Orofacial."),
+      links: [
+        { mark: "I", title: "Quem sou", sub: "Trajetória, formação e forma de trabalhar", onClick: nav.sobre },
+        { mark: "II", title: "Procedimentos", sub: "O que faço e como é o planejamento", onClick: nav.proc },
+        { mark: "III", title: "Antes & depois", sub: "Resultados reais, com autorização", onClick: nav.antes },
+        { mark: "IV", title: "Depoimentos", sub: "O que dizem minhas pacientes", onClick: nav.dep },
+        { mark: "V", title: "Instagram", sub: "@" + insta.replace(/^@/, ""), onClick: () => window.open(this.props.instagram ? "https://instagram.com/" + insta.replace(/^@/, "") : "#", "_blank") },
+        { mark: "VI", title: "Localização", sub: "Endereço, horários e como chegar", onClick: nav.local },
+        { mark: "VII", title: "Tire suas dúvidas", sub: "Assistente online · resposta imediata", onClick: nav.bot }
+      ],
+      procs: PROCS.map(([name, desc]) => ({
+        name,
+        desc,
+        onClick: () => this.wa("Olá, Dra. Clara! Tenho interesse em " + name + ". Pode me explicar como funciona?")
+      })),
+      topics: TOPICS.map(([label, answer]) => ({ label, onClick: this.ask(label, answer) })),
+      feedbacks: FEEDBACKS.map(([quote, who]) => ({ quote: "“" + quote + "”", who })),
+      botMsgs: this.state.botMsgs.map((m) => ({
+        text: m.text,
+        align: m.from === "me" ? "flex-end" : "flex-start",
+        bg: m.from === "me" ? "#B0824F" : "#FFFDFA",
+        fg: m.from === "me" ? "#FFF9F0" : "#3B2F26",
+        border: m.from === "me" ? "#B0824F" : "#EADCCB"
+      }))
+    };
+  }
+}
+
+</script>
+</body>
+</html>
