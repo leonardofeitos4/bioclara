@@ -19,20 +19,23 @@ index.html              todas as telas (home + subpáginas), em uma SPA sem fram
 │   └── app.js          hidratação, navegação, abas, ripple
 ├── data/
 │   ├── site.js         ⭐ configuração central: contato, redes, endereço, horários
-│   ├── procedimentos.js  lista de procedimentos + seletor "o que te incomoda"
+│   ├── procedimentos.js  procedimentos, categorias e seletor "o que te incomoda"
 │   └── testimonials.js   depoimentos
 ├── chatbot/
 │   ├── config.js       nome da assistente e velocidade de digitação
 │   ├── flows.js        árvore de conversa
 │   └── engine.js       motor de renderização do chat
-├── assets/
-│   ├── img/            fotos da Clara e casos de antes e depois
-│   └── logos/          logos originais (PDF)
+├── assets/img/         só o que vai ao ar: 4 fotos, 2 casos e a logo em PNG
 ├── docs/
-│   └── PENDENCIAS.md   ⚠️ o que ainda falta a Clara informar
-├── tudosobreclara/     material bruto enviado pela Clara
-└── _referencia/        protótipo original do biolink (não usado em produção)
+│   ├── PENDENCIAS.md   ⚠️ o que ainda falta a Clara informar
+│   └── prototipo-original.html   protótipo de referência, fora do site
+└── tudosobreclara/     material bruto da Clara: fotos originais e logos em PDF
 ```
+
+`assets/` contém apenas arquivos que o site realmente carrega. Todo o material
+bruto (fotos originais, logos em PDF) fica em `tudosobreclara/` — as imagens em
+`assets/img/` são cópias renomeadas de lá, e os dois PNGs da logo foram gerados a
+partir de `tudosobreclara/logo_CD_simbolo.pdf` e `logo_CD_horizontal.pdf`.
 
 ## Onde mexer
 
@@ -42,7 +45,8 @@ a partir dos atributos `data-wa`, `data-href` e `data-txt`.
 
 **Adicionar um procedimento:** novo item no array `PROCEDIMENTOS` em
 `data/procedimentos.js`. Ele aparece sozinho nos chips da home e na aba
-correspondente da página de procedimentos.
+correspondente da página de procedimentos. Criar uma entrada em `CATEGORIAS`
+gera a aba e o painel novos automaticamente — não se mexe no HTML.
 
 **Adicionar um depoimento:** novo item no array `tdata` em `data/testimonials.js`.
 
@@ -58,6 +62,16 @@ WhatsApp.
 publicar preço fechado. Os textos atuais seguem isso — valores sempre caem no
 "passado individualmente após a avaliação", e as imagens de antes e depois trazem o
 aviso de que resultados variam e de que há autorização da paciente.
+
+## Deploy
+
+Hospedado na Vercel (`bioclara.vercel.app`), a partir do branch `main` deste
+repositório. Não há passo de build: a Vercel serve os arquivos como estão.
+
+O Web Analytics está ativo pela tag no fim do `index.html`
+(`/_vercel/insights/script.js`) — é a forma indicada para site estático, sem npm
+nem React. Essa rota só existe quando servida pela Vercel; rodando local ela dá
+404 e o navegador ignora, sem quebrar nada.
 
 ## Antes de publicar
 

@@ -20,12 +20,6 @@ build/
 .vercel/
 .cache/
 
-# Vídeos grandes (servidos via YouTube/CDN, não pelo repositório)
-*.mp4
-*.MP4
-*.mov
-*.webm
-
 # Sistema operacional
 .DS_Store
 Thumbs.db

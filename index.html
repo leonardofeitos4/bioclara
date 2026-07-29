@@ -300,16 +300,10 @@
       individualmente no WhatsApp, de acordo com o seu planejamento.
     </p>
 
-    <div class="cat-tabs">
-      <button class="ctab on" onclick="ctab(this,'proc-expressao')">✨ Toxina botulínica</button>
-      <button class="ctab" onclick="ctab(this,'proc-volume')">💎 Contorno &amp; volume</button>
-      <button class="ctab" onclick="ctab(this,'proc-pele')">🌸 Qualidade de pele</button>
-    </div>
-
-    <!-- Preenchidos por data/procedimentos.js -->
-    <div class="cat-pane on" id="proc-expressao"></div>
-    <div class="cat-pane" id="proc-volume"></div>
-    <div class="cat-pane" id="proc-pele"></div>
+    <!-- Abas e painéis são gerados por data/procedimentos.js
+         a partir de CATEGORIAS + PROCEDIMENTOS -->
+    <div class="cat-tabs" id="cat-tabs"></div>
+    <div id="cat-panes"></div>
 
     <div class="info-note">
       Nenhum procedimento é realizado sem avaliação prévia. Os resultados variam de pessoa
@@ -438,6 +432,10 @@
 <script src="chatbot/flows.js"></script>
 <script src="chatbot/engine.js"></script>
 <script src="js/app.js"></script>
+
+<!-- Vercel Web Analytics (versão para site estático — a rota /_vercel/
+     é servida pela própria Vercel; em ambiente local ela dá 404 e é ignorada) -->
+<script defer src="/_vercel/insights/script.js"></script>
 
 </body>
 </html>

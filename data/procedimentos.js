@@ -8,9 +8,9 @@
 ═══════════════════════════════════════════ */
 
 const CATEGORIAS = {
-  expressao: { label: 'Toxina botulínica', desc: 'Suavizar marcas e tensões sem congelar a expressão — o movimento natural do rosto é preservado.' },
-  volume:    { label: 'Contorno & volume',   desc: 'Redesenhar proporções com preenchedores, respeitando a anatomia de cada face.' },
-  pele:      { label: 'Qualidade de pele',   desc: 'Estimular colágeno, hidratar em profundidade e devolver viço à pele.' },
+  expressao: { icone: '✨', label: 'Toxina botulínica',  desc: 'Suavizar marcas e tensões sem congelar a expressão — o movimento natural do rosto é preservado.' },
+  volume:    { icone: '💎', label: 'Contorno & volume',  desc: 'Redesenhar proporções com preenchedores, respeitando a anatomia de cada face.' },
+  pele:      { icone: '🌸', label: 'Qualidade de pele',  desc: 'Estimular colágeno, hidratar em profundidade e devolver viço à pele.' },
 };
 
 const PROCEDIMENTOS = [
@@ -97,28 +97,42 @@ function sym(btn, chave) {
   el.classList.add('show');
 }
 
-/* Popula os chips da home e os cards da página de procedimentos */
+/* Mensagem de WhatsApp usada tanto pelos chips quanto pelos cards */
+function msgInteresse(nome) {
+  return `Olá, Dra. Clara! Tenho interesse em ${nome}. Pode me explicar como funciona?`;
+}
+
+/* Popula os chips da home e as abas da página de procedimentos.
+   Abas e conteúdo saem da mesma fonte: criar uma entrada em
+   CATEGORIAS já gera a aba e o painel correspondentes. */
 function renderProcedimentos() {
   const chips = document.getElementById('proc-chips');
   if (chips) {
     chips.innerHTML = PROCEDIMENTOS.map(p =>
-      `<a class="pchip" href="${waLink(`Olá, Dra. Clara! Tenho interesse em ${p.nome}. Pode me explicar como funciona?`)}" target="_blank" rel="noopener">${p.nome}</a>`
+      `<a class="pchip" href="${waLink(msgInteresse(p.nome))}" target="_blank" rel="noopener">${p.nome}</a>`
     ).join('');
   }
 
-  Object.keys(CATEGORIAS).forEach(cat => {
-    const pane = document.getElementById(`proc-${cat}`);
-    if (!pane) return;
-    const lista = PROCEDIMENTOS.filter(p => p.cat === cat);
-    pane.innerHTML = `
-      <p class="cat-desc">${CATEGORIAS[cat].desc}</p>
-      ${lista.map(p => `
-        <a class="proc-card" href="${waLink(`Olá, Dra. Clara! Tenho interesse em ${p.nome}. Pode me explicar como funciona?`)}" target="_blank" rel="noopener">
-          <div style="flex:1">
-            <div class="proc-name">${p.nome}</div>
-            <div class="proc-desc">${p.desc}</div>
-          </div>
-          <div class="proc-arr">→</div>
-        </a>`).join('')}`;
-  });
+  const abas = document.getElementById('cat-tabs');
+  if (abas) {
+    abas.innerHTML = Object.entries(CATEGORIAS).map(([cat, c], i) =>
+      `<button class="ctab${i === 0 ? ' on' : ''}" onclick="ctab(this,'proc-${cat}')">${c.icone} ${c.label}</button>`
+    ).join('');
+  }
+
+  const paineis = document.getElementById('cat-panes');
+  if (paineis) {
+    paineis.innerHTML = Object.entries(CATEGORIAS).map(([cat, c], i) => `
+      <div class="cat-pane${i === 0 ? ' on' : ''}" id="proc-${cat}">
+        <p class="cat-desc">${c.desc}</p>
+        ${PROCEDIMENTOS.filter(p => p.cat === cat).map(p => `
+          <a class="proc-card" href="${waLink(msgInteresse(p.nome))}" target="_blank" rel="noopener">
+            <div style="flex:1">
+              <div class="proc-name">${p.nome}</div>
+              <div class="proc-desc">${p.desc}</div>
+            </div>
+            <div class="proc-arr">→</div>
+          </a>`).join('')}
+      </div>`).join('');
+  }
 }
