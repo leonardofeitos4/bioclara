@@ -57,7 +57,7 @@ const flows = {
     chips: [
       { l: 'Como é o planejamento?', f: 'primeira_consulta' },
       { l: 'Quanto tempo dura?', f: 'duracao' },
-      { l: 'Ver antes e depois', f: 'resultados' },
+      { l: 'Ver pré e pós', f: 'resultados' },
       { l: 'Quero agendar', f: 'agendar' },
     ]
   },
@@ -126,7 +126,7 @@ const flows = {
   natural: {
     msg: `Sim — esse é o princípio do trabalho da Dra. Clara. 🤍<br><br>O planejamento parte da <strong>sua própria anatomia</strong>: a ideia é valorizar o que você já tem de bonito, preservando sua identidade. Nada de rosto padronizado.`,
     chips: [
-      { l: 'Ver antes e depois', f: 'resultados' },
+      { l: 'Ver pré e pós', f: 'resultados' },
       { l: 'Como é a 1ª consulta?', f: 'primeira_consulta' },
       { l: 'Quero agendar', f: 'agendar' },
     ]
@@ -177,7 +177,7 @@ const flows = {
     ]
   },
   resultados: {
-    msg: `Tem uma seção de <strong>antes e depois</strong> aqui no perfil, com casos reais publicados mediante autorização das pacientes. 📸<br><br>É só voltar e tocar em "Antes & depois" — ou dar uma olhada no Instagram, onde tem mais casos.`,
+    msg: `Tem uma seção de <strong>pré e pós</strong> aqui no perfil, com casos reais publicados mediante autorização das pacientes. 📸<br><br>É só voltar e tocar em "Pré e pós" — ou dar uma olhada no Instagram, onde tem mais casos.`,
     chips: [
       { l: 'Ver o Instagram', f: 'instagram' },
       { l: 'Quero agendar', f: 'agendar' },

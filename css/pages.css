@@ -79,7 +79,7 @@
 }
 
 /* ══════════════════════════════
-   ANTES & DEPOIS
+   PRÉ E PÓS
 ══════════════════════════════ */
 .caso{display:flex;flex-direction:column;gap:9px}
 .caso-media{border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--line);background:#1a1a1a}

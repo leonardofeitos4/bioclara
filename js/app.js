@@ -77,7 +77,7 @@ function hydrate() {
 const ROTAS = {
   'page-sobre':         'quem-sou',
   'page-procedimentos': 'procedimentos',
-  'page-resultados':    'antes-e-depois',
+  'page-resultados':    'pre-e-pos',
   'page-local':         'localizacao',
   'page-chat':          'duvidas',
 };

@@ -60,7 +60,7 @@ WhatsApp.
 
 Área da saúde tem regra: nada de prometer resultado, dar diagnóstico pelo chat ou
 publicar preço fechado. Os textos atuais seguem isso — valores sempre caem no
-"passado individualmente após a avaliação", e as imagens de antes e depois trazem o
+"passado individualmente após a avaliação", e as imagens de pré e pós trazem o
 aviso de que resultados variam e de que há autorização da paciente.
 
 ## Deploy

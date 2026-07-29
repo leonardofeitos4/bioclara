@@ -32,7 +32,7 @@ de preferência com autorização da paciente para publicar. Formato de cada ite
 { t: 'texto do depoimento (pode usar <strong>)', a: 'Autoria · Procedimento' }
 ```
 
-## 4. Antes & depois — `assets/img/`
+## 4. Pré e pós — `assets/img/`
 
 Estão publicados 2 casos reais (`caso-01.jpeg` contorno mandibular, `caso-02.jpeg`
 preenchimento labial). Para adicionar mais:
@@ -51,9 +51,13 @@ e se algum nome muda. Cada item tem `nome`, `desc` e `cat`
 
 ## 6. Logo
 
-Os arquivos em `assets/logos/` são PDFs. Para usar a marca no site,
-preciso deles em **SVG ou PNG com fundo transparente**.
+Resolvido, mas vale conferir: gerei `assets/img/logo-simbolo.png` (o monograma, usado
+no círculo do topo e no favicon) e `assets/img/logo-horizontal.png` (usado no rodapé)
+a partir dos PDFs em `tudosobreclara/`, recortando e deixando o fundo transparente.
+
+Se ela tiver os originais em **SVG**, é melhor trocar — fica nítido em qualquer tela
+e pesa menos. Os PNGs de hoje já estão em resolução suficiente para o uso atual.
 
 ## 7. CRO
 
-Está como `CROPB 12226`, lido das artes de antes e depois. Confirmar se está correto.
+Está como `CROPB 12226`, lido das artes de pré e pós. Confirmar se está correto.
