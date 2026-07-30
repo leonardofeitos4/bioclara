@@ -1,19 +1,13 @@
 /* ═══════════════════════════════════════════
-   DADOS — Depoimentos
+   DADOS — Depoimentos reais das pacientes
 
-   ⚠️ PROVISÓRIOS. Substituir pelos depoimentos
-   reais das pacientes (ver docs/PENDENCIAS.md).
    Para adicionar: novo objeto no array tdata.
    { t: texto (HTML ok), a: autoria }
 ═══════════════════════════════════════════ */
 
 const tdata = [
-  { t: '"Ninguém percebeu que eu tinha feito algo — só disseram que eu estava <strong>descansada</strong>. Era exatamente o que eu queria."', a: 'Paciente · Preenchimento' },
-  { t: '"Fui muito bem acolhida. A <strong>análise antes de tudo</strong> me deu total segurança para seguir com o tratamento."', a: 'Paciente · Primeira consulta' },
-  { t: '"Resultado leve e natural, do jeito que combinamos no planejamento. <strong>Voltarei com certeza.</strong>"', a: 'Paciente · Toxina botulínica' },
-  { t: '"Tinha muito medo de ficar artificial. A Dra. Clara explicou cada passo e o resultado ficou <strong>totalmente natural</strong>."', a: 'Paciente · Lábios' },
-  { t: '"Meu contorno mudou sem mudar meu rosto. <strong>Continuo sendo eu</strong>, só que melhor."', a: 'Paciente · Contorno facial' },
-  { t: '"Atendimento impecável do início ao fim. Me senti <strong>segura e bem orientada</strong> em todas as etapas."', a: 'Paciente · Bioestimulador' },
+  { t: '"Eu amei demaisss o resultado! Clara superou todas as minhas expectativas. Ficou <strong>exatamente como eu queria</strong>! Obrigada por todo o carinho e cuidado. Você é incrível no que faz. ♥️♥️♥️♥️"', a: 'Paciente' },
+  { t: '"Quero deixar meu sincero agradecimento à Dra. Clara Dantas por todo o cuidado, profissionalismo e dedicação durante o meu procedimento. Estou muito feliz com o resultado. Obrigada por <strong>transformar minha autoestima</strong>."', a: 'Paciente' },
 ];
 
 function renderTestimonials() {

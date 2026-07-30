@@ -42,7 +42,7 @@
   background:var(--rose-200);aspect-ratio:4/5;
   box-shadow:var(--shadow-lg);animation:fadeU .7s ease both;
 }
-.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 18%}
+.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 35%}
 .hero-photo::after{
   content:'';position:absolute;inset:0;pointer-events:none;border-radius:var(--r-xl);
   box-shadow:inset 0 0 0 1px rgba(255,255,255,.35);
