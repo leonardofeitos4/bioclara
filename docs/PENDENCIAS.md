@@ -1,15 +1,15 @@
 # Pendências — informações que faltam da Dra. Clara
 
-Tudo abaixo está com **valor provisório** no código. Assim que a Clara passar os dados
-reais, é só editar `data/site.js` (todos os itens marcados com `AJUSTAR`).
+Os itens marcados com ⚠️ ainda estão com **valor provisório** no código. Assim que a
+Clara passar os dados reais, é só editar `data/site.js`.
 
 ## 1. Contato — `data/site.js`
 
-| Campo | Valor atual | O que preciso |
+| Campo | Situação | O que falta |
 |---|---|---|
-| `whatsapp` | `5583999999999` | Número real, só dígitos, com `55` + DDD |
-| `instagram` | `draclaradantas` | @ correto, sem o `@` |
-| `email` | vazio | E-mail profissional. Se ficar vazio, o card de e-mail some sozinho |
+| `whatsapp` | ✅ `5583987564401` — +55 (83) 98756-4401 | — |
+| `instagram` | ⚠️ `draclaradantas` (chutado) | O @ correto, sem o `@` |
+| `email` | ⚠️ vazio | E-mail profissional. Enquanto ficar vazio, o card de e-mail some sozinho |
 
 ## 2. Consultório — `data/site.js` → `endereco`
 
@@ -25,8 +25,9 @@ Incorporar um mapa → copiar só o valor do `src="..."`.
 
 ## 3. Depoimentos — `data/testimonials.js`
 
-Os 6 depoimentos de hoje são **provisórios**. Preciso dos reais (print ou texto),
-de preferência com autorização da paciente para publicar. Formato de cada item:
+✅ Já estão no ar 2 depoimentos reais. Se a Clara quiser mandar mais, é só somar ao
+array — o carrossel se ajusta sozinho. Vale confirmar se ela tem autorização das
+pacientes para publicar. Formato de cada item:
 
 ```js
 { t: 'texto do depoimento (pode usar <strong>)', a: 'Autoria · Procedimento' }
