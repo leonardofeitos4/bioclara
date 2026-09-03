@@ -14,7 +14,7 @@ const SITE = {
   cro:       'CROPB 12226',
   area:      'Harmonização Orofacial',
 
-  whatsapp:  '5583999999999',        // AJUSTAR, só números, com 55 + DDD
+  whatsapp:  '5583987564401',        // 55 + DDD 83 + 98756-4401
   instagram: 'draclaradantas',       // AJUSTAR, sem @
   email:     '',                     // AJUSTAR, deixe '' para ocultar o card
 
