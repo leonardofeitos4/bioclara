@@ -1,7 +1,7 @@
-# Biolink — Dra. Clara Dantas
+# Biolink, Dra. Clara Dantas
 
 Página de links da Dra. Clara Dantas, cirurgiã-dentista especializada em
-Harmonização Orofacial. HTML, CSS e JavaScript puros — sem build, sem dependências.
+Harmonização Orofacial. HTML, CSS e JavaScript puros, sem build, sem dependências.
 
 Para rodar, basta abrir `index.html` no navegador (ou servir a pasta:
 `python -m http.server 8000`).
@@ -20,12 +20,13 @@ index.html              todas as telas (home + subpáginas), em uma SPA sem fram
 ├── data/
 │   ├── site.js         ⭐ configuração central: contato, redes, endereço, horários
 │   ├── procedimentos.js  procedimentos, categorias e seletor "o que te incomoda"
-│   └── testimonials.js   depoimentos
+│   ├── testimonials.js   depoimentos
+│   └── casos.js          casos de pré e pós
 ├── chatbot/
 │   ├── config.js       nome da assistente e velocidade de digitação
 │   ├── flows.js        árvore de conversa
 │   └── engine.js       motor de renderização do chat
-├── assets/img/         só o que vai ao ar: 4 fotos, 2 casos e a logo em PNG
+├── assets/img/         só o que vai ao ar: 4 fotos, 10 casos e a logo em PNG
 ├── docs/
 │   ├── PENDENCIAS.md   ⚠️ o que ainda falta a Clara informar
 │   └── prototipo-original.html   protótipo de referência, fora do site
@@ -33,22 +34,27 @@ index.html              todas as telas (home + subpáginas), em uma SPA sem fram
 ```
 
 `assets/` contém apenas arquivos que o site realmente carrega. Todo o material
-bruto (fotos originais, logos em PDF) fica em `tudosobreclara/` — as imagens em
+bruto (fotos originais, logos em PDF) fica em `tudosobreclara/`, as imagens em
 `assets/img/` são cópias renomeadas de lá, e os dois PNGs da logo foram gerados a
 partir de `tudosobreclara/logo_CD_simbolo.pdf` e `logo_CD_horizontal.pdf`.
 
 ## Onde mexer
 
 **Trocar WhatsApp, Instagram, endereço ou horários:** só em `data/site.js`.
-Nenhum número ou @ está escrito no HTML — o `app.js` preenche tudo no carregamento
+Nenhum número ou @ está escrito no HTML, o `app.js` preenche tudo no carregamento
 a partir dos atributos `data-wa`, `data-href` e `data-txt`.
 
 **Adicionar um procedimento:** novo item no array `PROCEDIMENTOS` em
 `data/procedimentos.js`. Ele aparece sozinho nos chips da home e na aba
 correspondente da página de procedimentos. Criar uma entrada em `CATEGORIAS`
-gera a aba e o painel novos automaticamente — não se mexe no HTML.
+gera a aba e o painel novos automaticamente, não se mexe no HTML.
 
 **Adicionar um depoimento:** novo item no array `tdata` em `data/testimonials.js`.
+
+**Adicionar um caso de pré e pós:** salvar a foto em `assets/img/` e incluir um
+item no array `casos` em `data/casos.js` (`img`, `proc`, `obs`). A numeração
+("Caso 01", "Caso 02"...) sai sozinha da ordem do array. Na página, tocar na
+foto abre ela ampliada, para dar conta do pré e pós lado a lado no celular.
 
 **Mexer no chat:** cada resposta é uma entrada em `flows` (`chatbot/flows.js`), com
 `msg` e `chips`. Um chip com `f` navega para outro fluxo; um chip com `wa` abre o
@@ -59,7 +65,7 @@ WhatsApp.
 ## Cuidados de conteúdo
 
 Área da saúde tem regra: nada de prometer resultado, dar diagnóstico pelo chat ou
-publicar preço fechado. Os textos atuais seguem isso — valores sempre caem no
+publicar preço fechado. Os textos atuais seguem isso, valores sempre caem no
 "passado individualmente após a avaliação", e as imagens de pré e pós trazem o
 aviso de que resultados variam e de que há autorização da paciente.
 
@@ -69,7 +75,7 @@ Hospedado na Vercel (`bioclara.vercel.app`), a partir do branch `main` deste
 repositório. Não há passo de build: a Vercel serve os arquivos como estão.
 
 O Web Analytics está ativo pela tag no fim do `index.html`
-(`/_vercel/insights/script.js`) — é a forma indicada para site estático, sem npm
+(`/_vercel/insights/script.js`), é a forma indicada para site estático, sem npm
 nem React. Essa rota só existe quando servida pela Vercel; rodando local ela dá
 404 e o navegador ignora, sem quebrar nada.
 

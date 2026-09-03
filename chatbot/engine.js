@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════
-   MOTOR DO CHAT — Evo
+   MOTOR DO CHAT, Evo
    Depende de: data/site.js, config.js, flows.js
 ═══════════════════════════════════════════ */
 
@@ -49,7 +49,7 @@ function runFlow(id, label) {
 function startChat() {
   botMsg(
     `Olá! Eu sou a <strong>${CONFIG.nome}</strong>, assistente digital da <strong>${SITE.nome}</strong>. 🤍<br><br>` +
-    `Posso te ajudar com dúvidas sobre ${SITE.area} — como funciona cada procedimento, o que esperar e como é a avaliação.`,
+    `Posso te ajudar com dúvidas sobre ${SITE.area}, como funciona cada procedimento, o que esperar e como é a avaliação.`,
     flows.inicio.chips
   );
 }

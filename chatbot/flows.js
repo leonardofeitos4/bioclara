@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════
-   FLUXOS — Evo, assistente da Dra. Clara
+   FLUXOS, Evo, assistente da Dra. Clara
 
    Estrutura de cada fluxo:
    {
@@ -21,7 +21,7 @@ const flows = {
 
   /* ── MENU PRINCIPAL ── */
   inicio: {
-    msg: `Me conta o que te trouxe até aqui — assim eu te explico direitinho como funciona. 🤍`,
+    msg: `Me conta o que te trouxe até aqui, assim eu te explico direitinho como funciona. 🤍`,
     chips: [
       { l: '💋 Lábios', f: 'labios' },
       { l: '✨ Linhas de expressão', f: 'rugas' },
@@ -35,7 +35,7 @@ const flows = {
 
   /* ── ÁREAS DE INTERESSE ── */
   labios: {
-    msg: `O preenchimento labial da Dra. Clara parte do <strong>desenho do seu rosto</strong> — nada de modelo pronto. O foco é contorno, hidratação e proporção, com resultado natural.<br><br>Você já fez algum procedimento nos lábios antes?`,
+    msg: `O preenchimento labial da Dra. Clara parte do <strong>desenho do seu rosto</strong>, nada de modelo pronto. O foco é contorno, hidratação e proporção, com resultado natural.<br><br>Você já fez algum procedimento nos lábios antes?`,
     chips: [
       { l: 'Nunca fiz', f: 'primeira_vez' },
       { l: 'Já fiz, quero manutenção', f: 'manutencao' },
@@ -53,7 +53,7 @@ const flows = {
     ]
   },
   contorno: {
-    msg: `Contorno mandibular, mento e papada costumam ser avaliados <strong>em conjunto</strong> — o resultado bonito vem do equilíbrio entre eles, não de tratar um ponto isolado.<br><br>Por onde quer começar?`,
+    msg: `Contorno mandibular, mento e papada costumam ser avaliados <strong>em conjunto</strong>, o resultado bonito vem do equilíbrio entre eles, não de tratar um ponto isolado.<br><br>Por onde quer começar?`,
     chips: [
       { l: 'Como é o planejamento?', f: 'primeira_consulta' },
       { l: 'Quanto tempo dura?', f: 'duracao' },
@@ -62,7 +62,7 @@ const flows = {
     ]
   },
   pele: {
-    msg: `Bioestimuladores de colágeno e skinboosters trabalham a <strong>qualidade da pele</strong>: firmeza, textura e viço. O resultado é progressivo — aparece ao longo das semanas e dura bastante.<br><br>Quer saber mais sobre o quê?`,
+    msg: `Bioestimuladores de colágeno e skinboosters trabalham a <strong>qualidade da pele</strong>: firmeza, textura e viço. O resultado é progressivo, aparece ao longo das semanas e dura bastante.<br><br>Quer saber mais sobre o quê?`,
     chips: [
       { l: 'Quanto tempo dura?', f: 'duracao' },
       { l: 'Quantas sessões?', f: 'sessoes' },
@@ -80,7 +80,7 @@ const flows = {
     ]
   },
   naosei: {
-    msg: `Sem problema — a maioria das pacientes chega assim. 🤍<br><br>É exatamente para isso que existe a <strong>análise facial completa</strong>: a Dra. Clara avalia proporções, escuta o que te incomoda e mostra o que faz sentido para você — inclusive quando a resposta é "não precisa fazer nada agora".`,
+    msg: `Sem problema, a maioria das pacientes chega assim. 🤍<br><br>É exatamente para isso que existe a <strong>análise facial completa</strong>: a Dra. Clara avalia proporções, escuta o que te incomoda e mostra o que faz sentido para você, inclusive quando a resposta é "não precisa fazer nada agora".`,
     chips: [
       { l: 'Como é a 1ª consulta?', f: 'primeira_consulta' },
       { l: 'Quais os valores?', f: 'valores' },
@@ -90,7 +90,7 @@ const flows = {
 
   /* ── DÚVIDAS FREQUENTES ── */
   como_funciona: {
-    msg: `O procedimento é feito no consultório, em uma sessão, e normalmente leva de <strong>30 a 60 minutos</strong>.<br><br>Antes, a Dra. Clara marca os pontos do planejamento no seu rosto e aplica o anestésico. Durante a aplicação você fica acordada e conversando — e no fim vê o resultado no espelho, junto com as orientações do pós.`,
+    msg: `O procedimento é feito no consultório, em uma sessão, e normalmente leva de <strong>30 a 60 minutos</strong>.<br><br>Antes, a Dra. Clara marca os pontos do planejamento no seu rosto e aplica o anestésico. Durante a aplicação você fica acordada e conversando, e no fim vê o resultado no espelho, junto com as orientações do pós.`,
     chips: [
       { l: 'Dói?', f: 'dor' },
       { l: 'Tem recuperação?', f: 'recuperacao' },
@@ -99,7 +99,7 @@ const flows = {
     ]
   },
   primeira_vez: {
-    msg: `Começar bem faz toda diferença. 🌸<br><br>Na primeira vez a Dra. Clara costuma trabalhar de forma <strong>conservadora e progressiva</strong> — melhor construir o resultado aos poucos do que exagerar de uma vez. Você vê a evolução e decide os próximos passos com calma.`,
+    msg: `Começar bem faz toda diferença. 🌸<br><br>Na primeira vez a Dra. Clara costuma trabalhar de forma <strong>conservadora e progressiva</strong>, melhor construir o resultado aos poucos do que exagerar de uma vez. Você vê a evolução e decide os próximos passos com calma.`,
     chips: [
       { l: 'Como é a 1ª consulta?', f: 'primeira_consulta' },
       { l: 'Dói?', f: 'dor' },
@@ -108,7 +108,7 @@ const flows = {
     ]
   },
   manutencao: {
-    msg: `Para manutenção, a avaliação é ainda mais importante: a Dra. Clara precisa ler <strong>como o seu rosto respondeu</strong> ao que já foi feito antes de ajustar ou repetir qualquer coisa.<br><br>Se você tiver fotos do resultado atual, leve — ajuda bastante no planejamento.`,
+    msg: `Para manutenção, a avaliação é ainda mais importante: a Dra. Clara precisa ler <strong>como o seu rosto respondeu</strong> ao que já foi feito antes de ajustar ou repetir qualquer coisa.<br><br>Se você tiver fotos do resultado atual, leve, ajuda bastante no planejamento.`,
     chips: [
       { l: 'Como é a consulta?', f: 'primeira_consulta' },
       { l: 'Quais os valores?', f: 'valores' },
@@ -124,7 +124,7 @@ const flows = {
     ]
   },
   natural: {
-    msg: `Sim — esse é o princípio do trabalho da Dra. Clara. 🤍<br><br>O planejamento parte da <strong>sua própria anatomia</strong>: a ideia é valorizar o que você já tem de bonito, preservando sua identidade. Nada de rosto padronizado.`,
+    msg: `Sim, esse é o princípio do trabalho da Dra. Clara. 🤍<br><br>O planejamento parte da <strong>sua própria anatomia</strong>: a ideia é valorizar o que você já tem de bonito, preservando sua identidade. Nada de rosto padronizado.`,
     chips: [
       { l: 'Ver pré e pós', f: 'resultados' },
       { l: 'Como é a 1ª consulta?', f: 'primeira_consulta' },
@@ -132,7 +132,7 @@ const flows = {
     ]
   },
   dor: {
-    msg: `O desconforto é bem pequeno. 😌<br><br>A maioria dos procedimentos usa <strong>anestésico tópico ou local</strong>, e a Dra. Clara conversa com você durante todo o atendimento para que tudo aconteça com tranquilidade. Se a sensibilidade for uma preocupação, é só avisar — dá para ajustar.`,
+    msg: `O desconforto é bem pequeno. 😌<br><br>A maioria dos procedimentos usa <strong>anestésico tópico ou local</strong>, e a Dra. Clara conversa com você durante todo o atendimento para que tudo aconteça com tranquilidade. Se a sensibilidade for uma preocupação, é só avisar, dá para ajustar.`,
     chips: [
       { l: 'Tem recuperação?', f: 'recuperacao' },
       { l: 'É seguro?', f: 'seguranca' },
@@ -162,7 +162,7 @@ const flows = {
     ]
   },
   seguranca: {
-    msg: `A Dra. Clara é <strong>cirurgiã-dentista (${SITE.cro})</strong> com formação específica e atualização constante em Harmonização Orofacial.<br><br>Todos os produtos são de marcas registradas na ANVISA, e nenhum procedimento é feito sem <strong>avaliação prévia</strong> — se algo não for indicado para você, ela vai dizer isso com clareza.`,
+    msg: `A Dra. Clara é <strong>cirurgiã-dentista (${SITE.cro})</strong> com formação específica e atualização constante em Harmonização Orofacial.<br><br>Todos os produtos são de marcas registradas na ANVISA, e nenhum procedimento é feito sem <strong>avaliação prévia</strong>, se algo não for indicado para você, ela vai dizer isso com clareza.`,
     chips: [
       { l: 'Conhecer a Dra. Clara', f: 'sobre' },
       { l: 'Como é a 1ª consulta?', f: 'primeira_consulta' },
@@ -170,21 +170,21 @@ const flows = {
     ]
   },
   valores: {
-    msg: `Os valores dependem do <strong>planejamento feito na análise facial</strong> — cada rosto pede uma combinação diferente, então não existe tabela única.<br><br>Por isso a Dra. Clara passa os valores individualmente no WhatsApp, já com base no que faz sentido para você.`,
+    msg: `Os valores dependem do <strong>planejamento feito na análise facial</strong>, cada rosto pede uma combinação diferente, então não existe tabela única.<br><br>Por isso a Dra. Clara passa os valores individualmente no WhatsApp, já com base no que faz sentido para você.`,
     chips: [
       { l: 'Falar sobre valores', wa: 'Olá, Dra. Clara! Gostaria de saber os valores para o meu caso.' },
       { l: 'Como é a 1ª consulta?', f: 'primeira_consulta' },
     ]
   },
   resultados: {
-    msg: `Tem uma seção de <strong>pré e pós</strong> aqui no perfil, com casos reais publicados mediante autorização das pacientes. 📸<br><br>É só voltar e tocar em "Pré e pós" — ou dar uma olhada no Instagram, onde tem mais casos.`,
+    msg: `Tem uma seção de <strong>pré e pós</strong> aqui no perfil, com casos reais publicados mediante autorização das pacientes. 📸<br><br>É só voltar e tocar em "Pré e pós", ou dar uma olhada no Instagram, onde tem mais casos.`,
     chips: [
       { l: 'Ver o Instagram', f: 'instagram' },
       { l: 'Quero agendar', f: 'agendar' },
     ]
   },
   sobre: {
-    msg: `A Dra. Clara Dantas é <strong>cirurgiã-dentista</strong> (${SITE.cro}) apaixonada por Harmonização Orofacial. 🤍<br><br>A trajetória dela é construída com muito estudo e atualização constante — e a certeza de que a excelência está nos detalhes. Antes de qualquer tratamento, ela faz uma análise completa para criar um planejamento exclusivo para você.`,
+    msg: `A Dra. Clara Dantas é <strong>cirurgiã-dentista</strong> (${SITE.cro}) apaixonada por Harmonização Orofacial. 🤍<br><br>A trajetória dela é construída com muito estudo e atualização constante, e a certeza de que a excelência está nos detalhes. Antes de qualquer tratamento, ela faz uma análise completa para criar um planejamento exclusivo para você.`,
     chips: [
       { l: 'Como é a 1ª consulta?', f: 'primeira_consulta' },
       { l: 'Onde fica o consultório?', f: 'local' },
@@ -199,7 +199,7 @@ const flows = {
     ]
   },
   instagram: {
-    msg: `O Instagram da Dra. Clara é <strong>@${SITE.instagram}</strong> — lá ela publica casos, bastidores do consultório e conteúdo sobre Harmonização Orofacial. ✨`,
+    msg: `O Instagram da Dra. Clara é <strong>@${SITE.instagram}</strong>, lá ela publica casos, bastidores do consultório e conteúdo sobre Harmonização Orofacial. ✨`,
     chips: [
       { l: 'Quero agendar', f: 'agendar' },
     ]

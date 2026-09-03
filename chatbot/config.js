@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════
-   CHATBOT — configuração
+   CHATBOT, configuração
    Depende de: data/site.js (SITE, waLink)
 ═══════════════════════════════════════════ */
 

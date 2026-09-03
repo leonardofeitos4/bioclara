@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════
-   DADOS — Procedimentos e seletor de interesse
+   DADOS, Procedimentos e seletor de interesse
 
    PROCEDIMENTOS: alimenta os chips da home e
    os cards da página "Procedimentos".
@@ -8,7 +8,7 @@
 ═══════════════════════════════════════════ */
 
 const CATEGORIAS = {
-  expressao: { icone: '✨', label: 'Toxina botulínica',  desc: 'Suavizar marcas e tensões sem congelar a expressão — o movimento natural do rosto é preservado.' },
+  expressao: { icone: '✨', label: 'Toxina botulínica',  desc: 'Suavizar marcas e tensões sem congelar a expressão, o movimento natural do rosto é preservado.' },
   volume:    { icone: '💎', label: 'Contorno & volume',  desc: 'Redesenhar proporções com preenchedores, respeitando a anatomia de cada face.' },
   pele:      { icone: '🌸', label: 'Qualidade de pele',  desc: 'Estimular colágeno, hidratar em profundidade e devolver viço à pele.' },
 };
@@ -16,8 +16,8 @@ const CATEGORIAS = {
 const PROCEDIMENTOS = [
   { nome: 'Toxina botulínica',        cat: 'expressao', desc: 'Suaviza linhas de expressão da testa, glabela e olhos preservando a naturalidade.' },
   { nome: 'Sorriso gengival',         cat: 'expressao', desc: 'Ajuste da exposição da gengiva ao sorrir, com aplicação pontual e precisa.' },
-  { nome: 'Bruxismo e apertamento',   cat: 'expressao', desc: 'Alívio da tensão do masseter — conforto no dia a dia e suavização do terço inferior.' },
-  { nome: 'Preenchimento labial',     cat: 'volume',    desc: 'Contorno, hidratação e volume proporcional ao seu rosto — sem exageros.' },
+  { nome: 'Bruxismo e apertamento',   cat: 'expressao', desc: 'Alívio da tensão do masseter, conforto no dia a dia e suavização do terço inferior.' },
+  { nome: 'Preenchimento labial',     cat: 'volume',    desc: 'Contorno, hidratação e volume proporcional ao seu rosto, sem exageros.' },
   { nome: 'Preenchimento facial',     cat: 'volume',    desc: 'Malar, mento, olheiras e mandíbula com desenho personalizado.' },
   { nome: 'Rinomodelação',            cat: 'volume',    desc: 'Ajuste do perfil nasal sem cirurgia, em consultório.' },
   { nome: 'Contorno mandibular',      cat: 'volume',    desc: 'Definição do ângulo da mandíbula e do terço inferior da face.' },
@@ -27,7 +27,7 @@ const PROCEDIMENTOS = [
 ];
 
 /* ═══════════════════════════════════════════
-   SELETOR — "O que mais te incomoda hoje?"
+   SELETOR, "O que mais te incomoda hoje?"
    Alimenta os botões da home. Para adicionar,
    crie a entrada aqui e o botão no index.html.
 ═══════════════════════════════════════════ */
@@ -35,13 +35,13 @@ const PROCEDIMENTOS = [
 const INTERESSES = {
   labios: {
     titulo: 'Lábios sem volume ou assimétricos',
-    texto:  'O preenchimento labial da Dra. Clara parte do <strong>desenho do seu rosto</strong>, não de um modelo pronto. O objetivo é contorno definido, hidratação e proporção — lábios que continuam sendo os seus, só que valorizados.',
+    texto:  'O preenchimento labial da Dra. Clara parte do <strong>desenho do seu rosto</strong>, não de um modelo pronto. O objetivo é contorno definido, hidratação e proporção, lábios que continuam sendo os seus, só que valorizados.',
     cta:    'Quero avaliar meus lábios',
     wa:     'Olá, Dra. Clara! Gostaria de avaliar um preenchimento labial.',
   },
   rugas: {
     titulo: 'Linhas de expressão marcadas',
-    texto:  'A toxina botulínica bem aplicada <strong>suaviza sem congelar</strong>. A Dra. Clara ajusta a dose ponto a ponto para que a sua expressão continue viva — você parece descansada, não "operada".',
+    texto:  'A toxina botulínica bem aplicada <strong>suaviza sem congelar</strong>. A Dra. Clara ajusta a dose ponto a ponto para que a sua expressão continue viva, você parece descansada, não "operada".',
     cta:    'Quero suavizar minhas linhas',
     wa:     'Olá, Dra. Clara! Tenho interesse em toxina botulínica para linhas de expressão.',
   },
@@ -59,7 +59,7 @@ const INTERESSES = {
   },
   olheiras: {
     titulo: 'Olhar cansado e olheiras',
-    texto:  'Olheiras têm causas diferentes — perda de volume, pigmentação ou sombra. Por isso o tratamento só é definido <strong>depois da avaliação</strong>, e nem sempre envolve preenchimento.',
+    texto:  'Olheiras têm causas diferentes, perda de volume, pigmentação ou sombra. Por isso o tratamento só é definido <strong>depois da avaliação</strong>, e nem sempre envolve preenchimento.',
     cta:    'Quero avaliar minhas olheiras',
     wa:     'Olá, Dra. Clara! Gostaria de avaliar tratamento para olheiras.',
   },
@@ -71,7 +71,7 @@ const INTERESSES = {
   },
   primeira: {
     titulo: 'Nunca fiz nada e tenho receio',
-    texto:  'Esse é o melhor lugar para começar. A primeira consulta é uma <strong>análise facial completa</strong>: a Dra. Clara escuta seus objetivos, avalia proporções e propõe um planejamento — sem compromisso de fechar nada no mesmo dia.',
+    texto:  'Esse é o melhor lugar para começar. A primeira consulta é uma <strong>análise facial completa</strong>: a Dra. Clara escuta seus objetivos, avalia proporções e propõe um planejamento, sem compromisso de fechar nada no mesmo dia.',
     cta:    'Quero marcar minha avaliação',
     wa:     'Olá, Dra. Clara! Nunca fiz harmonização e gostaria de fazer uma avaliação.',
   },

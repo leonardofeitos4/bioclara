@@ -267,7 +267,7 @@
       <div class="sobre-txt">
         Todo atendimento começa pela <strong>análise facial completa</strong>: escuto o que te incomoda,
         avalio proporções, anatomia e qualidade de pele, e só então monto o planejamento.
-        Você entende cada etapa antes de decidir — e se algo não for indicado para o seu caso,
+        Você entende cada etapa antes de decidir, e se algo não for indicado para o seu caso,
         eu vou te dizer isso com clareza.
       </div>
     </div>
@@ -325,27 +325,8 @@
 
     <p class="cat-desc">Casos reais, publicados com <strong>autorização das pacientes</strong>.</p>
 
-    <div class="caso">
-      <div class="caso-meta">
-        <div class="caso-proc">Contorno mandibular</div>
-        <div class="caso-num">Caso 01</div>
-      </div>
-      <div class="caso-media">
-        <img src="assets/img/caso-01.jpeg" alt="Pré e pós de contorno mandibular" loading="lazy">
-      </div>
-      <div class="caso-obs">Definição do ângulo da mandíbula e do terço inferior da face, preservando os traços da paciente.</div>
-    </div>
-
-    <div class="caso">
-      <div class="caso-meta">
-        <div class="caso-proc">Preenchimento labial</div>
-        <div class="caso-num">Caso 02</div>
-      </div>
-      <div class="caso-media">
-        <img src="assets/img/caso-02.jpeg" alt="Pré e pós de preenchimento labial" loading="lazy">
-      </div>
-      <div class="caso-obs">Contorno, hidratação e volume proporcional — lábios valorizados sem perder a naturalidade.</div>
-    </div>
+    <p class="aviso">Toque em uma foto para ampliar.</p>
+    <div class="casos" id="casos"></div>
 
     <div class="aviso">
       Resultados variam de pessoa para pessoa.<br>
@@ -396,7 +377,7 @@
 
 
 <!-- ════════════════════════════════════════
-     CHAT — Evo
+     CHAT, Evo
 ════════════════════════════════════════ -->
 <div class="pg subpg" id="page-chat">
   <div class="sp-head">
@@ -418,17 +399,24 @@
 
 
 <!-- ════════════════════════════════════════
-     SCRIPTS — ordem de dependência
+     SCRIPTS, ordem de dependência
 ════════════════════════════════════════ -->
+<!-- Foto ampliada (pré e pós) -->
+<div class="foto-zoom" id="foto-zoom" onclick="fecharFoto()">
+  <button class="foto-zoom-fechar" aria-label="Fechar foto">✕</button>
+  <img id="foto-zoom-img" src="" alt="Pré e pós ampliado">
+</div>
+
 <script src="data/site.js"></script>
 <script src="data/procedimentos.js"></script>
 <script src="data/testimonials.js"></script>
+<script src="data/casos.js"></script>
 <script src="chatbot/config.js"></script>
 <script src="chatbot/flows.js"></script>
 <script src="chatbot/engine.js"></script>
 <script src="js/app.js"></script>
 
-<!-- Vercel Web Analytics (versão para site estático — a rota /_vercel/
+<!-- Vercel Web Analytics (versão para site estático, a rota /_vercel/
      é servida pela própria Vercel; em ambiente local ela dá 404 e é ignorada) -->
 <script defer src="/_vercel/insights/script.js"></script>
 

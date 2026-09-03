@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════
-   DADOS — Depoimentos reais das pacientes
+   DADOS, Depoimentos reais das pacientes
 
    Para adicionar: novo objeto no array tdata.
    { t: texto (HTML ok), a: autoria }

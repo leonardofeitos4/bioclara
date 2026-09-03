@@ -1,13 +1,13 @@
 /* ═══════════════════════════════════════════
-   APP — navegação, hidratação e interações
+   APP, navegação, hidratação e interações
    Depende de: data/site.js, data/procedimentos.js,
-   data/testimonials.js, chatbot/*
+   data/testimonials.js, data/casos.js, chatbot/*
 ═══════════════════════════════════════════ */
 
 /* ══════════════════════════════
    1. HIDRATAÇÃO A PARTIR DO SITE
    Evita número de WhatsApp e @ espalhados
-   pelo HTML — tudo vem de data/site.js.
+   pelo HTML, tudo vem de data/site.js.
 ══════════════════════════════ */
 function hydrate() {
   /* href de WhatsApp: <a data-wa="mensagem"> */
@@ -148,10 +148,25 @@ function bindRipple() {
 }
 
 /* ══════════════════════════════
-   5. BOOT
+   5. FOTO AMPLIADA (pré e pós)
+══════════════════════════════ */
+function ampliarFoto(src) {
+  document.getElementById('foto-zoom-img').src = src;
+  document.getElementById('foto-zoom').classList.add('on');
+}
+
+function fecharFoto() {
+  document.getElementById('foto-zoom').classList.remove('on');
+}
+
+addEventListener('keydown', e => { if (e.key === 'Escape') fecharFoto(); });
+
+/* ══════════════════════════════
+   6. BOOT
 ══════════════════════════════ */
 hydrate();
 renderProcedimentos();
 renderTestimonials();
+renderCasos();
 bindRipple();
 sincronizar();   /* abre a seção direto se a URL já vier com #hash */
