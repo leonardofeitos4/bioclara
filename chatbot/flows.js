@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════
-   FLUXOS, Evo, assistente da Dra. Clara
+   FLUXOS, Clarinha, assistente da Dra. Clara
 
    Estrutura de cada fluxo:
    {

@@ -31,9 +31,9 @@ const SITE = {
   ],
 
   assistente: {
-    nome:     'Evo',
-    monograma:'E',
-    assinatura:'Evo · Assistente digital',
+    nome:     'Clarinha',
+    monograma:'C',
+    assinatura:'Clarinha · Assistente da Dra. Clara',
   },
 };
 

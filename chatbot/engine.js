@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════
-   MOTOR DO CHAT, Evo
+   MOTOR DO CHAT, Clarinha
    Depende de: data/site.js, config.js, flows.js
 ═══════════════════════════════════════════ */
 
